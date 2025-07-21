@@ -1,483 +1,232 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+// 스크롤 애니메이션
+function scrollToSection(sectionId) {
+    const section = document.getElementById(sectionId);
+    section.scrollIntoView({ behavior: 'smooth' });
 }
 
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    min-height: 100vh;
+function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    border-radius: 20px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-
-header {
-    background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
-    color: white;
-    padding: 2rem 0;
-    position: relative;
-    overflow: hidden;
-}
-
-header::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
-    animation: float 20s ease-in-out infinite;
-}
-
-@keyframes float {
-    0%, 100% { transform: translateY(0px) rotate(0deg); }
-    50% { transform: translateY(-20px) rotate(180deg); }
-}
-
-.header-content {
-    text-align: center;
-    position: relative;
-    z-index: 1;
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 0 2rem;
-}
-
-.logo {
-    font-size: 3rem;
-    font-weight: bold;
-    margin-bottom: 0.5rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    animation: glow 2s ease-in-out infinite alternate;
-}
-
-@keyframes glow {
-    from { text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); }
-    to { text-shadow: 2px 2px 20px rgba(255, 255, 255, 0.5); }
-}
-
-.subtitle {
-    font-size: 1.2rem;
-    opacity: 0.9;
-    margin-bottom: 1rem;
-}
-
-.university {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: #ecf0f1;
-}
-
-.notice-banner {
-    background: linear-gradient(135deg, #e74c3c, #c0392b);
-    color: white;
-    padding: 0;
-    position: relative;
-    overflow: hidden;
-    animation: slideDown 0.5s ease-out;
-    box-shadow: 0 2px 10px rgba(231, 76, 60, 0.3);
-}
-
-.notice-banner::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-    animation: shimmer 3s ease-in-out infinite;
-}
-
-@keyframes slideDown {
-    from {
-        transform: translateY(-100%);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-@keyframes shimmer {
-    0% { left: -100%; }
-    100% { left: 100%; }
-}
-
-.notice-content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 1rem 2rem;
-    position: relative;
-    z-index: 1;
-    gap: 0.5rem;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.notice-content i.fa-bell {
-    font-size: 1.1rem;
-    animation: ring 2s ease-in-out infinite;
-}
-
-@keyframes ring {
-    0%, 100% { transform: rotate(0deg); }
-    10%, 30% { transform: rotate(-10deg); }
-    20% { transform: rotate(10deg); }
-}
-
-.notice-text {
-    font-weight: 500;
-    font-size: 0.95rem;
-    text-align: center;
-    flex: 1;
-    line-height: 1.4;
-}
-
-.notice-close {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 1.2rem;
-    cursor: pointer;
-    padding: 0.2rem;
-    border-radius: 50%;
-    width: 30px;
-    height: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-    opacity: 0.8;
-}
-
-.notice-close:hover {
-    background: rgba(255, 255, 255, 0.2);
-    opacity: 1;
-    transform: rotate(90deg);
-}
-
-.notice-banner.hidden {
-    display: none;
-}
-
-nav {
-    background: rgba(52, 73, 94, 0.9);
-    padding: 1rem 0;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    backdrop-filter: blur(10px);
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 2rem;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-    border-radius: 25px;
-    transition: all 0.3s ease;
-}
-
-nav a:hover {
-    background: rgba(255, 255, 255, 0.2);
-    color: #ecf0f1;
-}
-
-main {
-    padding: 2rem;
-}
-
-.section {
-    margin-bottom: 3rem;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 0.8s ease forwards;
-}
-
-.section:nth-child(2) { animation-delay: 0.2s; }
-.section:nth-child(3) { animation-delay: 0.4s; }
-.section:nth-child(4) { animation-delay: 0.6s; }
-
-@keyframes fadeInUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-h2 {
-    color: #2c3e50;
-    margin-bottom: 1rem;
-    font-size: 2rem;
-    position: relative;
-    padding-bottom: 0.5rem;
-}
-
-h2::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 50px;
-    height: 3px;
-    background: linear-gradient(90deg, #3498db, #2c3e50);
-    border-radius: 2px;
-}
-
-.card {
-    background: white;
-    padding: 2rem;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    margin-bottom: 1.5rem;
-    transition: all 0.3s ease;
-    border: 1px solid rgba(0, 0, 0, 0.05);
-    position: relative;
-    overflow: hidden;
-}
-
-.card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(52, 152, 219, 0.1), transparent);
-    transition: left 0.8s;
-}
-
-.card:hover::before {
-    left: 100%;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-}
-
-.research-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
-}
-
-.research-item {
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-    padding: 1.5rem;
-    border-radius: 12px;
-    border-left: 4px solid #3498db;
-    transition: all 0.3s ease;
-}
-
-.research-item:hover {
-    transform: scale(1.02);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-}
-
-.research-item h3 {
-    color: #2c3e50;
-    margin-bottom: 0.5rem;
-    font-size: 1.2rem;
-}
-
-.member-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
-}
-
-.member-card {
-    background: white;
-    padding: 2rem;
-    border-radius: 15px;
-    text-align: center;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-}
-
-.member-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: linear-gradient(90deg, #3498db, #2c3e50, #e74c3c);
-}
-
-.member-card:hover {
-    transform: translateY(-10px) rotate(1deg);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-}
-
-.member-photo {
-    position: relative;
-    width: 120px;
-    height: 120px;
-    margin: 0 auto 1rem;
-    border-radius: 50%;
-    overflow: hidden;
-    background: linear-gradient(135deg, #3498db, #2c3e50);
-    padding: 3px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-.member-photo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 50%;
-    background: white;
-    display: block;
-}
-
-.member-avatar {
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, #3498db, #2c3e50);
-    border-radius: 50%;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    font-size: 2.5rem;
-    color: white;
-    font-weight: bold;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-.publication-item {
-    background: #f8f9fa;
-    padding: 1.5rem;
-    border-radius: 10px;
-    margin-bottom: 1rem;
-    border-left: 3px solid #3498db;
-    transition: all 0.3s ease;
-}
-
-.publication-item:hover {
-    background: #e9ecef;
-    transform: translateX(5px);
-}
-
-.contact-info {
-    background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
-    color: white;
-    padding: 2rem;
-    border-radius: 15px;
-    margin-top: 2rem;
-}
-
-.contact-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-}
-
-.contact-item {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-.contact-item i {
-    font-size: 1.5rem;
-    color: #ecf0f1;
-}
-
-footer {
-    background: #2c3e50;
-    color: white;
-    text-align: center;
-    padding: 2rem;
-    margin-top: 3rem;
-}
-
-.scroll-to-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #3498db;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    font-size: 1.2rem;
-    cursor: pointer;
-    opacity: 0;
-    transition: all 0.3s ease;
-    z-index: 1000;
-}
-
-.scroll-to-top.visible {
-    opacity: 1;
-}
-
-.scroll-to-top:hover {
-    background: #2980b9;
-    transform: scale(1.1);
-}
-
-@media (max-width: 768px) {
-    .logo {
-        font-size: 2rem;
-    }
+// 공지사항 닫기 기능
+function closeNotice() {
+    const noticeBanner = document.querySelector('.notice-banner');
+    noticeBanner.style.animation = 'slideUp 0.5s ease-in-out forwards';
     
-    .notice-content {
-        flex-direction: column;
-        gap: 0.5rem;
-        padding: 1rem;
-        text-align: center;
+    setTimeout(() => {
+        noticeBanner.classList.add('hidden');
+    }, 500);
+}
+
+// 페이지 로드시 공지사항 상태 확인
+function checkNoticeStatus() {
+    try {
+        const closedTime = localStorage.getItem('notice-closed');
+        if (closedTime && new Date().getTime() < parseInt(closedTime)) {
+            const noticeBanner = document.querySelector('.notice-banner');
+            noticeBanner.classList.add('hidden');
+        }
+    } catch (e) {
+        // localStorage가 지원되지 않는 경우 무시
     }
+}
+
+// slideUp 애니메이션 추가
+const style = document.createElement('style');
+style.textContent = `
+    @keyframes slideUp {
+        to {
+            transform: translateY(-100%);
+            opacity: 0;
+        }
+    }
+`;
+document.head.appendChild(style);
+
+// 스크롤 투 탑 버튼 표시/숨김
+window.addEventListener('scroll', function() {
+    const scrollButton = document.querySelector('.scroll-to-top');
+    if (window.pageYOffset > 300) {
+        scrollButton.classList.add('visible');
+    } else {
+        scrollButton.classList.remove('visible');
+    }
+});
+
+// 페이지 로드 시 애니메이션
+window.addEventListener('load', function() {
+    const sections = document.querySelectorAll('.section');
+    sections.forEach((section, index) => {
+        setTimeout(() => {
+            section.style.opacity = '1';
+            section.style.transform = 'translateY(0)';
+        }, index * 200);
+    });
+});
+
+// 네비게이션 하이라이트
+window.addEventListener('scroll', function() {
+    const sections = document.querySelectorAll('.section');
+    const navLinks = document.querySelectorAll('nav a');
     
-    .notice-text {
-        font-size: 0.85rem;
-    }
+    let current = '';
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (pageYOffset >= (sectionTop - 200)) {
+            current = section.getAttribute('id');
+        }
+    });
+
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + current) {
+            link.classList.add('active');
+        }
+    });
+});
+
+// 카드 호버 효과
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.card, .member-card, .research-item').forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-5px) scale(1.02)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) scale(1)';
+        });
+    });
+});
+
+// 타이핑 효과 (연구실 소개)
+function typeWriter(element, text, speed = 50) {
+    let i = 0;
+    element.innerHTML = '';
     
-    nav ul {
-        flex-direction: column;
-        align-items: center;
-        gap: 0.5rem;
+    function type() {
+        if (i < text.length) {
+            element.innerHTML += text.charAt(i);
+            i++;
+            setTimeout(type, speed);
+        }
     }
+    type();
+}
+
+// 배경 파티클 효과
+function createParticles() {
+    const particleContainer = document.createElement('div');
+    particleContainer.style.position = 'fixed';
+    particleContainer.style.top = '0';
+    particleContainer.style.left = '0';
+    particleContainer.style.width = '100%';
+    particleContainer.style.height = '100%';
+    particleContainer.style.pointerEvents = 'none';
+    particleContainer.style.zIndex = '-1';
+    document.body.appendChild(particleContainer);
+
+    for (let i = 0; i < 50; i++) {
+        const particle = document.createElement('div');
+        particle.style.position = 'absolute';
+        particle.style.width = '2px';
+        particle.style.height = '2px';
+        particle.style.backgroundColor = 'rgba(255, 255, 255, 0.5)';
+        particle.style.borderRadius = '50%';
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.top = Math.random() * 100 + '%';
+        particle.style.animation = `float ${5 + Math.random() * 10}s ease-in-out infinite`;
+        particleContainer.appendChild(particle);
+    }
+}
+
+// 인터섹션 옵저버를 활용한 애니메이션
+function initScrollAnimations() {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate-in');
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    });
+
+    // 애니메이션 대상 요소들 관찰
+    document.querySelectorAll('.section, .card, .research-item, .member-card').forEach(el => {
+        observer.observe(el);
+    });
+}
+
+// 네비게이션 활성 상태 CSS 추가
+function addNavigationStyles() {
+    const style = document.createElement('style');
+    style.textContent = `
+        nav a.active {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+        
+        .animate-in {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+        }
+    `;
+    document.head.appendChild(style);
+}
+
+// 부드러운 스크롤을 위한 polyfill
+function smoothScrollPolyfill() {
+    if (!('scrollBehavior' in document.documentElement.style)) {
+        const script = document.createElement('script');
+        script.src = 'https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.10/SmoothScroll.min.js';
+        document.head.appendChild(script);
+    }
+}
+
+// 페이지 로드 시 초기화
+document.addEventListener('DOMContentLoaded', function() {
+    // 공지사항 상태 확인
+    checkNoticeStatus();
     
-    .research-grid,
-    .member-grid,
-    .projects-grid {
-        grid-template-columns: 1fr;
-    }
+    // 스타일과 기능 초기화
+    addNavigationStyles();
+    smoothScrollPolyfill();
+    initScrollAnimations();
+    createParticles();
     
-    main {
-        padding: 1rem;
-    }
+    // 로딩 완료 후 애니메이션 시작
+    setTimeout(() => {
+        document.body.classList.add('loaded');
+    }, 100);
+});
+
+// 리사이즈 이벤트 처리
+window.addEventListener('resize', function() {
+    // 모바일에서 뷰포트 높이 조정
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+});
+
+// 터치 디바이스 최적화
+if ('ontouchstart' in window) {
+    document.body.classList.add('touch-device');
+    
+    // 터치 디바이스용 스타일 추가
+    const touchStyle = document.createElement('style');
+    touchStyle.textContent = `
+        .touch-device .card:hover,
+        .touch-device .member-card:hover,
+        .touch-device .research-item:hover {
+            transform: none;
+        }
+        
+        .touch-device .card:active,
+        .touch-device .member-card:active,
+        .touch-device .research-item:active {
+            transform: scale(0.98);
+        }
+    `;
+    document.head.appendChild(touchStyle);
 }
