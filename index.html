@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>한림대학교 자연어처리 연구실</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <div class="logo">🧠 NLP Lab</div>
+                <div class="subtitle">자연어처리 연구실</div>
+                <div class="university">한림대학교</div>
+            </div>
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="#about" onclick="scrollToSection('about')">연구실 소개</a></li>
+                <li><a href="#research" onclick="scrollToSection('research')">연구 분야</a></li>
+                <li><a href="#members" onclick="scrollToSection('members')">구성원</a></li>
+                <li><a href="#publications" onclick="scrollToSection('publications')">논문</a></li>
+                <li><a href="#projects" onclick="scrollToSection('projects')">연구과제</a></li>
+                <li><a href="#contact" onclick="scrollToSection('contact')">연락처</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <section id="about" class="section">
+                <h2>연구실 소개</h2>
+                <div class="card">
+                    <p>한림대학교 자연어처리 연구실은 인공지능과 자연어처리 기술의 최첨단 연구를 수행하는 연구실입니다. 우리는 언어의 이해와 생성, 기계학습, 딥러닝 등의 기술을 활용하여 실생활에 도움이 되는 NLP 시스템을 개발하고 있습니다.</p>
+                    
+                    <h3 style="margin-top: 2rem; color: #3498db;">연구실 목표</h3>
+                    <ul style="margin-top: 1rem; padding-left: 2rem;">
+                        <li>한국어 자연어처리 기술의 발전에 기여</li>
+                        <li>실용적인 AI 시스템 개발</li>
+                        <li>우수한 연구 인재 양성</li>
+                        <li>산학협력을 통한 기술 사업화</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="research" class="section">
+                <h2>연구 분야</h2>
+                <div class="research-grid">
+                    <div class="research-item">
+                        <h3>🤖 기계학습 & 딥러닝</h3>
+                        <p>Transformer, BERT, GPT 등 최신 딥러닝 모델을 활용한 자연어처리 연구</p>
+                    </div>
+                    <div class="research-item">
+                        <h3>💬 대화시스템</h3>
+                        <p>챗봇, 질의응답 시스템, 대화형 AI 에이전트 개발</p>
+                    </div>
+                    <div class="research-item">
+                        <h3>📊 감성분석</h3>
+                        <p>텍스트의 감정과 의견을 분석하는 시스템 개발</p>
+                    </div>
+                    <div class="research-item">
+                        <h3>📝 텍스트 마이닝</h3>
+                        <p>대용량 텍스트 데이터에서 유용한 정보를 추출하는 기술</p>
+                    </div>
+                    <div class="research-item">
+                        <h3>🌐 기계번역</h3>
+                        <p>신경망 기반 기계번역 시스템 연구 및 개발</p>
+                    </div>
+                    <div class="research-item">
+                        <h3>🔍 정보검색</h3>
+                        <p>의미 기반 검색 시스템 및 추천 알고리즘 연구</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="members" class="section">
+                <h2>구성원</h2>
+                
+                <h3 style="margin-bottom: 1rem; color: #3498db;">교수진</h3>
+                <div class="member-grid">
+                    <div class="member-card">
+                        <div class="member-photo">
+                            <img src="images/professor.jpg" alt="김교수 교수" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="member-avatar">김</div>
+                        </div>
+                        <h3>김교수 교수</h3>
+                        <p>연구실 지도교수</p>
+                        <p><strong>전문분야:</strong> 자연어처리, 기계학습</p>
+                        <p><strong>이메일:</strong> professor@hallym.ac.kr</p>
+                    </div>
+                </div>
+
+                <h3 style="margin: 2rem 0 1rem 0; color: #3498db;">대학원생</h3>
+                <div class="member-grid">
+                    <div class="member-card">
+                        <div class="member-photo">
+                            <img src="images/student1.jpg" alt="박석사" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="member-avatar">박</div>
+                        </div>
+                        <h3>박석사</h3>
+                        <p>석사과정</p>
+                        <p><strong>연구분야:</strong> 대화시스템</p>
+                    </div>
+                    <div class="member-card">
+                        <div class="member-photo">
+                            <img src="images/student2.jpg" alt="이박사" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="member-avatar">이</div>
+                        </div>
+                        <h3>이박사</h3>
+                        <p>박사과정</p>
+                        <p><strong>연구분야:</strong> 감성분석</p>
+                    </div>
+                    <div class="member-card">
+                        <div class="member-photo">
+                            <img src="images/student3.jpg" alt="최연구" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="member-avatar">최</div>
+                        </div>
+                        <h3>최연구</h3>
+                        <p>석사과정</p>
+                        <p><strong>연구분야:</strong> 기계번역</p>
+                    </div>
+                </div>
+                <h3 style="margin: 2rem 0 1rem 0; color: #3498db;">학부생</h3>
+                <div class="member-grid">
+                    <div class="member-card">
+                        <div class="member-photo">
+                            <img src="images/student1.jpg" alt="박석사" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="member-avatar">송</div>
+                        </div>
+                        <h3>송준하</h3>
+                        <p>학부과정</p>
+                        <p><strong>연구분야:</strong> 대화시스템</p>
+                    </div>
+                    <div class="member-card">
+
+                    </div>
+                    <div class="member-card">
+
+                    </div>
+                </div>
+            </section>
+
+            <section id="publications" class="section">
+                <h2>주요 논문</h2>
+                <div class="publication-item">
+                    <h4>한국어 감성분석을 위한 BERT 기반 모델 개발</h4>
+                    <p><strong>저자:</strong> 김교수, 이박사, 박석사</p>
+                    <p><strong>학회:</strong> 한국정보과학회 논문지, 2024</p>
+                </div>
+                <div class="publication-item">
+                    <h4>대화형 질의응답 시스템의 성능 향상 방안</h4>
+                    <p><strong>저자:</strong> 박석사, 김교수</p>
+                    <p><strong>학회:</strong> 한국컴퓨터종합학술대회, 2024</p>
+                </div>
+                <div class="publication-item">
+                    <h4>신경망 기반 한영 기계번역 시스템</h4>
+                    <p><strong>저자:</strong> 최연구, 이박사, 김교수</p>
+                    <p><strong>학회:</strong> 한국정보처리학회 논문지, 2023</p>
+                </div>
+                <div class="publication-item">
+                    <h4>텍스트 마이닝을 활용한 소셜미디어 트렌드 분석</h4>
+                    <p><strong>저자:</strong> 김교수, 박석사</p>
+                    <p><strong>학회:</strong> 한국데이터베이스학회 논문지, 2023</p>
+                </div>
+            </section>
+
+            <section id="projects" class="section">
+                <h2>진행중인 연구과제</h2>
+                
+                <div class="projects-grid">
+                    <div class="project-card ongoing">
+                        <div class="project-status">진행중</div>
+                        <h3>🔬 한국어 대화형 AI 시스템 개발</h3>
+                        <p class="project-period">2024.03 ~ 2025.02</p>
+                        <p class="project-funding">한국연구재단 기본연구지원사업</p>
+                        <div class="project-description">
+                            <p>한국어 특성을 반영한 대화형 AI 시스템 개발 및 실용화 연구. Transformer 기반 모델을 활용하여 자연스러운 한국어 대화 생성 기술 개발.</p>
+                        </div>
+                        <div class="project-team">
+                            <strong>참여연구원:</strong> 김교수(책임), 이박사, 박석사
+                        </div>
+                    </div>
+                    <br>
+                    <div class="project-card ongoing">
+                        <div class="project-status">진행중</div>
+                        <h3>📊 소셜미디어 감성분석 시스템</h3>
+                        <p class="project-period">2024.06 ~ 2024.12</p>
+                        <p class="project-funding">정보통신기획평가원 (IITP)</p>
+                        <div class="project-description">
+                            <p>실시간 소셜미디어 데이터를 활용한 여론 동향 및 감성 분석 시스템 개발. 딥러닝 기반 감성 분류 모델 구축.</p>
+                        </div>
+                        <div class="project-team">
+                            <strong>참여연구원:</strong> 김교수(책임), 이박사, 최연구
+                        </div>
+                    </div>
+                    <br>
+                    <div class="project-card planning">
+                        <div class="project-status">계획중</div>
+                        <h3>🌐 다국어 기계번역 성능 향상 연구</h3>
+                        <p class="project-period">2025.01 ~ 2026.12</p>
+                        <p class="project-funding">과학기술정보통신부</p>
+                        <div class="project-description">
+                            <p>한국어-영어, 한국어-중국어, 한국어-일본어 간 고성능 신경망 기계번역 시스템 개발 및 번역 품질 향상 연구.</p>
+                        </div>
+                        <div class="project-team">
+                            <strong>참여예정:</strong> 김교수(책임), 최연구, 박석사
+                        </div>
+                    </div>
+                    <br>
+                    <div class="project-card ongoing">
+                        <div class="project-status">진행중</div>
+                        <h3>🏥 의료 텍스트 마이닝 시스템</h3>
+                        <p class="project-period">2024.01 ~ 2024.11</p>
+                        <p class="project-funding">산학협력 과제 (○○병원)</p>
+                        <div class="project-description">
+                            <p>의료진 진료 기록 및 환자 리뷰 데이터를 활용한 의료 서비스 품질 분석 시스템 개발. 의료 도메인 특화 자연어처리 기술 적용.</p>
+                        </div>
+                        <div class="project-team">
+                            <strong>참여연구원:</strong> 김교수(책임), 박석사
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+            <section id="contact" class="section">
+                <h2>연락처</h2>
+                <div class="contact-info">
+                    <div class="contact-grid">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <strong>주소</strong><br>
+                                강원도 춘천시 한림대학길 1<br>
+                                한림대학교 공학관
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <strong>전화</strong><br>
+                                033-248-xxxx
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <strong>이메일</strong><br>
+                                nlplab@hallym.ac.kr
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-globe"></i>
+                            <div>
+                                <strong>웹사이트</strong><br>
+                                nlp.hallym.ac.kr
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 한림대학교 자연어처리 연구실. All rights reserved.</p>
+            <p>Natural Language Processing Laboratory, Hallym University</p>
+        </footer>
+    </div>
+
+    <button class="scroll-to-top" onclick="scrollToTop()">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
