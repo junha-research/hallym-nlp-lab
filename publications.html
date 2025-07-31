@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연구논문 전체 목록 | 한림대학교 자연어처리 연구실</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .publications-header {
+            background: white;
+            border-bottom: 1px solid #e2e8f0;
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .publications-header h1 {
+            font-size: 2.25rem;
+            font-weight: 600;
+            color: #1a202c;
+            margin-bottom: 0.75rem;
+        }
+
+        .publications-header p {
+            color: #4a5568;
+            font-size: 1.125rem;
+        }
+
+        .breadcrumb {
+            background: #f7fafc;
+            padding: 1rem 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .breadcrumb-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            font-size: 0.9rem;
+            color: #718096;
+        }
+
+        .breadcrumb a {
+            color: #d97706;
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            color: #b45309;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #4a5568;
+            color: white;
+            text-decoration: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+        }
+
+        .back-btn:hover {
+            background: #2d3748;
+        }
+
+        .publications-list {
+            background: white;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+            overflow: hidden;
+        }
+
+        .publication-item {
+            padding: 1.5rem;
+            border-bottom: 1px solid #e2e8f0;
+            transition: background-color 0.2s ease;
+        }
+
+        .publication-item:last-child {
+            border-bottom: none;
+        }
+
+        .publication-item:hover {
+            background: #f7fafc;
+        }
+
+        .publication-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #1a202c;
+            margin-bottom: 0.5rem;
+            line-height: 1.4;
+        }
+
+        .publication-authors {
+            color: #4a5568;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .publication-meta {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .publication-venue {
+            color: #d97706;
+            font-weight: 500;
+        }
+
+        .publication-year {
+            color: #718096;
+        }
+
+        .year-section {
+            margin-bottom: 2rem;
+        }
+
+        .year-header {
+            background: #d97706;
+            color: white;
+            padding: 1rem 2rem;
+            font-size: 1.25rem;
+            font-weight: 600;
+            border-radius: 8px 8px 0 0;
+        }
+
+        .stats-summary {
+            background: #f7fafc;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .stats-summary h3 {
+            color: #1a202c;
+            margin-bottom: 1rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+        }
+
+        .stat-item {
+            background: white;
+            padding: 1rem;
+            border-radius: 6px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .stat-number {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #d97706;
+            margin-bottom: 0.3rem;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: #4a5568;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="publications-header">
+            <h1>연구논문 전체 목록</h1>
+            <p>한림대학교 자연어처리 연구실의 모든 연구논문을 확인하실 수 있습니다</p>
+        </div>
+
+        <div class="breadcrumb">
+            <div class="breadcrumb-content">
+                <i class="fas fa-home"></i>
+                <a href="index.html">홈</a> > 
+                <a href="index.html#publications">논문</a> > 
+                <span>전체 목록</span>
+            </div>
+        </div>
+
+        <main style="padding: 2rem;">
+            <a href="index.html#publications" class="back-btn">
+                <i class="fas fa-arrow-left"></i>
+                메인 페이지로 돌아가기
+            </a>
+
+            <!-- 2024년 -->
+            <div class="year-section">
+                <div class="year-header">2024년 (3편)</div>
+                <div class="publications-list">
+                    <div class="publication-item">
+                        <div class="publication-title">Detection of Aortic Dissection and Intramural Hematoma in Non-Contrast Chest Computed Tomography Using a You Only Look Once-Based Deep Learning Model</div>
+                        <div class="publication-authors">Yu-Seop Kim, Jae Guk Kim, Hyun Young Choi, Dain Lee, Jin-Woo Kong, Gu Hyun Kang, Yong Soo Jang, Wonhee Kim, Yoonje Lee, Jihoon Kim, Dong Geum Shin, Jae Keun Park, Gayoung Lee, Bitnarae Kim</div>
+                        <div class="publication-meta">
+                            <div class="publication-venue">Journal of Clinical Medicine</div>
+                            <div class="publication-year">2024</div>
+                        </div>
+                    </div>
+                    <div class="publication-item">
+                        <div class="publication-title">Language Model-Based Text Augmentation System for Cerebrovascular Disease Related Medical Report</div>
+                        <div class="publication-authors">Yu-Hyeon Kim, Chulho Kim, Yu-Seop Kim</div>
+                        <div class="publication-meta">
+                            <div class="publication-venue">Applied Sciences</div>
+                            <div class="publication-year">2024</div>
+                        </div>
+                    </div>
+                    <div class="publication-item">
+                        <div class="publication-title">Sequential Brain CT Image Captioning Based on the Pre-Trained Classifiers and a Language Model</div>
+                        <div class="publication-authors">Jin-Woo Kong, Byoung-Doo Oh, Chulho Kim, Yu-Seop Kim</div>
+                        <div class="publication-meta">
+                            <div class="publication-venue">Applied Sciences</div>
+                            <div class="publication-year">2024</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2023년 -->
+            <div class="year-section">
+                <div class="year-header">2023년 (4편)</div>
+                <div class="publications-list">
+                    <div class="publication-item">
+                        <div class="publication-title">The Reliability of the Korean-Automatic Language Analysis System (K-ALAS): A Computerized Language Analysis System for Language Assessment</div>
+                        <div class="publication-authors">YoonKyoung Lee, Yu-Seop Kim, Suah Lim, Byoung-Doo Oh</div>
+                        <div class="publication-meta">
+                            <div class="publication-venue">Communication Sciences & Disorders</div>
+                            <div class="publication-year">2023</div>
+                        </div>
+                    </div>
+                    <div class="publication-item">
+                        <div class="publication-title">Convolutional Neural Network and Language Model-Based Sequential CT Image Captioning for Intracerebral Hemorrhage</div>
+                        <div class="publication-authors">Gi-Youn Kim, Byoung-Doo Oh, Chulho Kim, Yu-Seop Kim</div>
+                        <div class="publication-meta">
+                            <div class="publication-venue">Applied Sciences</div>
+                            <div class="publication-year">2023</div>
+                        </div>
+                    </div>
+                    <div class="publication-item">
+                        <div class="publication-title">Void Detection inside Duct of Prestressed Concrete Bridges Based on Deep Support Vector Data Description</div>
+                        <div class="publication-authors">Byoung-Doo Oh, Hyung Choi, Won-Jong Chin, Chan-Young Park, Yu-Seop Kim</div>
+                        <div class="publication-meta">
+                            <div class="publication-venue">Applied Sciences</div>
+                            <div class="publication-year">2023</div>
+                        </div>
+                    </div>
+                    <div class="publication-item">
+                        <div class="publication-title">Comparison of the Diagnostic Performance of Deep Learning Algorithms for Reducing the Time Required for COVID-19 RT-PCR Testing</div>
+                        <div class="publication-authors">Yoonje Lee, Yu-Seop Kim, Da In Lee, Seri Jeong, Gu Hyun Kang, Yong Soo Jang, Wonhee Kim, Hyun Young Choi, Jae Guk Kim</div>
+                        <div class="publication-meta">
+                            <div class="publication-venue">Viruses</div>
+                            <div class="publication-year">2023</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2022년 -->
+            <div class="year-section">
+                <div class="year-header">2022년 (6편)</div>
+                <div class="publications-list">
+                    <div class="publication-item">
+                        <div class="publication-title">The Using Predicates and the Relations to Sentence Production of Aged 2-3</div>
+                        <div class="publication-authors">Eun Ha Sim, Yu-Seop Kim, Yoonkyoung Lee</div>
+                        <div class="publication-meta">
+                            <div class="publication-venue">Communication Sciences & Disorders</div>
+                            <div class="publication-year">2022</div>
+                        </div>
+                    </div>
+                    <div class="publication-item">
+                        <div class="publication-title">Deep Learning-Based End-to-End Language Development Screening for Children Using Linguistic Knowledge</div>
+                        <div class="publication-authors"> Byoung-Doo Oh, Yoon-Kyoung Lee, Jong-Dae Kim, Chan-Young Park, Yu-Seop Kim</div>
+                        <div class="publication-meta">
+                            <div class="publication-venue">Applied Sciences</div>
+                            <div class="publication-year">2022</div>
+                        </div>
+                    </div>
+                    <div class="publication-item">
+                        <div class="publication-title">Machine Learning-Based Automatic Utterance Collection Model for Language Development Screening of Children</div>
+                        <div class="publication-authors">Jeong-Myeong Choi,Yoon-Kyoung Lee,Jong-Dae Kim, Chan-Young Park, Yu-Seop Kim</div>
+                        <div class="publication-meta">
+                            <div class="publication-venue">Applied Sciences</div>
+                            <div class="publication-year">2022</div>
+                        </div>
+                    </div>
+                    <div class="publication-item">
+                        <div class="publication-title">Utilization of Unsupervised Machine Learning for Detection of Duct Voids inside PSC Box Girder Bridges</div>
+                        <div class="publication-authors"> Da-In Lee, Hyung Choi, Jong-Dae Kim, Chan-Young Park, Yu-Seop Kim</div>
+                        <div class="publication-meta">
+                            <div class="publication-venue">Applied Sciences</div>
+                            <div class="publication-year">2022</div>
+                        </div>
+                    </div>
+                    <div class="publication-item">
+                        <div class="publication-title">Nondestructive Evaluation of Ducts in Prestressed Concrete Bridges Using Heterogeneous Neural Networks and Impact-echo</div>
+                        <div class="publication-authors">Byoung-Doo Oh, Hyung Choi, Young Jin Kim, Won Jong Chin, Yu-Seop Kim</div>
+                        <div class="publication-meta">
+                            <div class="publication-venue">Sensors and Materials</div>
+                            <div class="publication-year">2022</div>
+                        </div>
+                    </div>
+                    <div class="publication-item">
+                        <div class="publication-title">The application of a deep learning system developed to reduce the time for RT-PCR in COVID-19 detection</div>
+                        <div class="publication-authors">Yoonje Lee, Yu-Seop Kim, Da-in Lee, Seri Jeong, Gu-Hyun Kang, Yong Soo Jang, Wonhee Kim, Hyun Young Choi, Jae Guk Kim, Sang-hoon Choi </div>
+                        <div class="publication-meta">
+                            <div class="publication-venue">Scientific Reports</div>
+                            <div class="publication-year">2022</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2021년 -->
+            <div class="year-section">
+                <div class="year-header">2021년 (16편)</div>
+                <div class="publications-list">
+                    <div class="publication-item">
+                        <div class="publication-title">청년층, 중장년층, 노년층의 대화 특성 비교: 화용 능력을 중심으로</div>
+                        <div class="publication-authors">김효정, 윤지혜, 이윤경, 최지은, 오소정, 김유섭, 이득주</div>
+                        <div class="publication-meta">
+                            <div class="publication-venue">특수교육재활과학연구</div>
+                            <div class="publication-year">2021</div>
+                        </div>
+                    </div>
+                    <div class="publication-item">
+                        <div class="publication-title">Cloud-Based Software Architecture for Fully Automated Point-of-Care Molecular Diagnostic Device</div>
+                        <div class="publication-authors">Byeong-Heon Kil, Ji-Seong Park, Mun-Ho Ryu, Chan-Young Park, Yu-Seop Kim, Jong-Dae Kim</div>
+                        <div class="publication-meta">
+                            <div class="publication-venue">Sensors</div>
+                            <div class="publication-year">2021</div>
+                        </div>
+                    </div>
+                    <div class="publication-item">
+                        <div class="publication-title">Cost-Effective Multiplex Fluorescence Detection System for PCR Chip</div>
+                        <div class="publication-authors">Sung-Hun Yun, Ji-Sung Park, Seul-Bit-Na Koo, Chan-Young Park, Yu-Seop Kim, Jong-Dae Kim</div>
+                        <div class="publication-meta">
+                            <div class="publication-venue">Sensors</div>
+                            <div class="publication-year">2021</div>
+                        </div>
+                    </div>
+                    <div class="publication-item">
+                        <div class="publication-title">Multiple Compact Camera Fluorescence Detector for Real-Time PCR Devices</div>
+                        <div class="publication-authors"> Seul-Bit-Na Koo, Hyeon-Gyu Chi, Jong-Dae Kim, Yu-Seop Kim, Ji-Sung Park, Chan-Young Park, Deuk-Ju Lee</div>
+                        <div class="publication-meta">
+                            <div class="publication-venue">Sensors</div>
+                            <div class="publication-year">2021</div>
+                        </div>
+                    </div>
+                    <div class="publication-item">
+                        <div class="publication-title">Open Platform Cameras Based Bio-Imaging Evaluation System</div>
+                        <div class="publication-authors">Ji-Yeon Baek, Jong-Dae Kim, Yu-Seop Kim, Chan-Young Park, Ji-Soo Hwang</div>
+                        <div class="publication-meta">
+                            <div class="publication-venue">Sensors</div>
+                            <div class="publication-year">2021</div>
+                        </div>
+                    </div>
+                    <div class="publication-item">
+                        <div class="publication-title">Impact-Echo 신호와 장단기 메모리에 기반한 교량 결함 탐지</div>
+                        <div class="publication-authors">오병두, 최형, 김영진, 진원종, 김유섭</div>
+                        <div class="publication-meta">
+                            <div class="publication-venue">한국정보과학회논문지</div>
+                            <div class="publication-year">2021</div>
+                        </div>
+                    </div>
+                    <div class="publication-item">
+                        <div class="publication-title">Prediction of Hemorrhagic Transformation after Ischemic Stroke Using Machine Learning</div>
+                        <div class="publication-authors">Jeong-Myeong Choi, Soo-Young Seo, Pum-Jun Kim, Yu-Seop Kim, Sang-Hwa Lee, Jong-Hee Sohn, Dong-Kyu Kim, Jae-Jun Lee, Chulho Kim</div>
+                        <div class="publication-meta">
+                            <div class="publication-venue">Journal of Personalized Medicine</div>
+                            <div class="publication-year">2021</div>
+                        </div>
+                    </div>
+                    <div class="publication-item">
+                        <div class="publication-title">Topic modeling for analyzing topic manipulation skills</div>
+                        <div class="publication-authors">Seok-Ju Hwang, Yoon-Kyoung Lee, Jong-Dae Kim, Chan-Young Park, Yu-Seop Kim</div>
+                        <div class="publication-meta">
+                            <div class="publication-venue">Information</div>
+                            <div class="publication-year">2021</div>
+                        </div>
+                    </div>
+                    <div class="publication-item">
+                        <div class="publication-title">Word Embedding Reveals Cyfra 21-1 as a Biomarker for Chronic Obstructive Pulmonary Disease</div>
+                        <div class="publication-authors">Jeongwon Heo, Da Hye Moon, Yoonki Hong, So Hyeon Bak, Jeeyoung Kim, Joo Hyun Park, Byoung-Doo Oh, Yu-Seop Kim, Woo Jin Kim</div>
+                        <div class="publication-meta">
+                            <div class="publication-venue">Journal of Korean Medical Science</div>
+                            <div class="publication-year">2021</div>
+                        </div>
+                    </div>
+                    <div class="publication-item">
+                        <div class="publication-title">Quantitative Analysis of Fluorescence Detection Using a Smartphone Camera for a PCR Chip</div>
+                        <div class="publication-authors"> Jong-Dae Kim, Chan-Young Park, Yu-Seop Kim, Ji-Soo Hwang</div>
+                        <div class="publication-meta">
+                            <div class="publication-venue">Sensors</div>
+                            <div class="publication-year">2021</div>
+                        </div>
+                    </div>
+                    <div class="publication-item">
+                        <div class="publication-title">Global and local information adjustment for semantic similarity evaluation</div>
+                        <div class="publication-authors"> Tak-Sung Heo, Jong-Dae Kim, Chan-Young Park, Yu-Seop Kim</div>
+                        <div class="publication-meta">
+                            <div class="publication-venue">Applied Sciences</div>
+                            <div class="publication-year">2021</div>
+                        </div>
+                    </div>
+                    <div class="publication-item">
+                        <div class="publication-title">Word Embedding Reveals Cyfra 21-1 as a Biomarker for Chronic Obstructive Pulmonary Disease</div>
+                        <div class="publication-authors">Jeongwon Heo, Da Hye Moon, Yoonki Hong, So Hyeon Bak, Jeeyoung Kim, Joo Hyun Park, Byoung-Doo Oh, Yu-Seop Kim, Woo Jin Kim</div>
+                        <div class="publication-meta">
+                            <div class="publication-venue">Journal of Korean Medical Science</div>
+                            <div class="publication-year">2021</div>
+                        </div>
+                    </div>
+                    <div class="publication-item">
+                        <div class="publication-title">Age group classification to identify the progress of language development based on convolutional neural networks</div>
+                        <div class="publication-authors">Byoung-Doo Oh, Yoon-Kyoung Lee, Hye-Jeong Song, Jong-Dae Kim, Chan-Young Park, Yu-Seop Kim</div>
+                        <div class="publication-meta">
+                            <div class="publication-venue">Journal of Intelligent & Fuzzy Systems</div>
+                            <div class="publication-year">2021</div>
+                        </div>
+                    </div>
+                    <div class="publication-item">
+                        <div class="publication-title">Automatic Word Spacing of Korean Using Syllable and Morpheme</div>
+                        <div class="publication-authors">Jeong-Myeong Choi, Jong-Dae Kim, Chan-Young Park, Yu-Seop Kim</div>
+                        <div class="publication-meta">
+                            <div class="publication-venue">Applied Sciences</div>
+                            <div class="publication-year">2021</div>
+                        </div>
+                    </div>
+                    <div class="publication-item">
+                        <div class="publication-title">Deep learning based prediction of prognosis in nonmetastatic clear cell renal cell carcinoma</div>
+                        <div class="publication-authors">Seok-Soo Byun, Tak Sung Heo, Jeong Myeong Choi, Yeong Seok Jeong, Yu Seop Kim, Won Ki Lee, Chulho Kim</div>
+                        <div class="publication-meta">
+                            <div class="publication-venue">Scientific Reports</div>
+                            <div class="publication-year">2021</div>
+                        </div>
+                    </div>
+                    <div class="publication-item">
+                        <div class="publication-title">Prediction of Atrial Fibrillation Cases: Convolutional Neural Networks Using the Output Texts of Electrocardiography</div>
+                        <div class="publication-authors">Tak-Sung Heo, Chulho Kim, Jong-Dae Kim, Chan-Young Park, Yu-Seop Kim</div>
+                        <div class="publication-meta">
+                            <div class="publication-venue">Sensors and Materials</div>
+                            <div class="publication-year">2021</div>
+                        </div>
+                    </div>
+                    <div class="publication-item">
+                        <div class="publication-title">Sentence similarity evaluation using Sent2Vec and siamese neural network with parallel structure</div>
+                        <div class="publication-authors">Tak-Sung Heo, Jong-Dae Kim, Chan-Young Park, Yu-Seop Kim</div>
+                        <div class="publication-meta">
+                            <div class="publication-venue">Journal of Intelligent & Fuzzy Systems</div>
+                            <div class="publication-year">2021</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <!-- 2020년 -->
+            <div class="year-section">
+                <div class="year-header">2020년 (4편)</div>
+                <div class="publications-list">
+                    <div class="publication-item">
+                        <div class="publication-title">Prediction of Stroke Outcome Using Natural Language Processing-Based Machine Learning of Radiology Report of Brain MRI</div>
+                        <div class="publication-authors">Tak Sung Heo, Yu Seop Kim, Jeong Myeong Choi, Yeong Seok Jeong, Soo Young Seo, Jun Ho Lee, Jin Pyeong Jeon, Chulho Kim</div>
+                        <div class="publication-meta">
+                            <div class="publication-venue">Journal of Personalized Medicine</div>
+                            <div class="publication-year">2020</div>
+                        </div>
+                    </div>
+                    <div class="publication-item">
+                        <div class="publication-title">Barcode Recognition for Multistrip Lateral Flow Assay Reader</div>
+                        <div class="publication-authors">Ji-Seong Park, Yong-Oh Lee, Chan-Young Park, Yu-Seop Kim, Ki-Bong Nahm, Jong-Dae Kim</div>
+                        <div class="publication-meta">
+                            <div class="publication-venue">Sensors and Materials</div>
+                            <div class="publication-year">2020</div>
+                        </div>
+                    </div>
+                    <div class="publication-item">
+                        <div class="publication-title">Compact DNA Droplet Concentration Detection System Based on Impedance Measurement</div>
+                        <div class="publication-authors">Ji-Seong Park, Mi-So Lee, Chan-Young Park, Yu-Seop Kim, Hye-Jeong Song, Jong-Dae Kim</div>
+                        <div class="publication-meta">
+                            <div class="publication-venue">Sensors and Materials</div>
+                            <div class="publication-year">2020</div>
+                        </div>
+                    </div>
+                    <div class="publication-item">
+                        <div class="publication-title">Detection of Defect Inside Duct Using Recurrent Neural Networks</div>
+                        <div class="publication-authors">Byoung-Doo Oh, Hyung Choi, Hey-Jeong Song, Jong-Dae Kim, Chan-Young Park, Yu-Seop Kim</div>
+                        <div class="publication-meta">
+                            <div class="publication-venue">Sensors and Materials</div>
+                            <div class="publication-year">2020</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+
+        <footer>
+            <p>&copy; 2025 한림대학교 자연어처리 연구실. All rights reserved.</p>
+            <p>Natural Language Processing Laboratory, Hallym University</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
